@@ -6,7 +6,7 @@ type boardType = string[]
 const initialBoard = Array(9).fill('');
 const isBoardFilled = (board:boardType):boolean => board.every(i => i !== "")
 
-const WINNING_COMBOS = [
+const WINNING_COMBOS:number[][] = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8], // Rows
@@ -53,12 +53,7 @@ export default function TicTacToe() {
     setIsTie(false)
   }
 
-  // For next round
-  function nextRound() {
-    setBoard(initialBoard);
-    setIsX(false);
-    setIsTie(false)
-  }
+
 
   let message = "";
   if(winner){
@@ -103,7 +98,7 @@ export default function TicTacToe() {
             >
               {message}
             </h2>
-            <button className="ttt-next-round" onClick={nextRound}>
+            <button className="ttt-next-round" onClick={resetGame}>
               Next Round
             </button>
           </div>
