@@ -64,7 +64,7 @@ export default function TicTacToe() {
 
   return (
     <Fragment>
-      {(!winner || !isTie) && (
+      {(!winner && !isTie) && (
         <div className="ttt-container">
           <header className="ttt-header">
             <button className="ttt-turn">{next} TURN</button>
