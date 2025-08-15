@@ -1,12 +1,13 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import "./ticTac.css";
 
-type boardType = string[]
+type boardType = string[];
 
-const initialBoard = Array(9).fill('');
-const isBoardFilled = (board:boardType):boolean => board.every(i => i !== "")
+const initialBoard = Array(9).fill("");
+const isBoardFilled = (board: boardType): boolean =>
+  board.every((i) => i !== "");
 
-const WINNING_COMBOS:number[][] = [
+const WINNING_COMBOS: number[][] = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8], // Rows
@@ -17,7 +18,7 @@ const WINNING_COMBOS:number[][] = [
   [2, 4, 6], // Diagonals
 ];
 
-function getWinner(board:boardType) {
+function getWinner(board: boardType) {
   for (let combo of WINNING_COMBOS) {
     const [a, b, c] = combo;
     if (board[a] && board[a] === board[b] && board[a] === board[c])
@@ -34,39 +35,49 @@ export default function TicTacToe() {
   const winner = getWinner(board);
   const next = isX ? "X" : "O";
 
-  function handleClick(idx:number) {
+  function handleClick(idx: number) {
     if (board[idx] || winner || isTie) return;
     const updated = board.slice();
     updated[idx] = next;
     setBoard(updated);
     setIsX(!isX);
 
-   const isWinner = getWinner(updated);
-   if(!isWinner && isBoardFilled(updated)){
-    setIsTie(true)
-   }
+    const isWinner = getWinner(updated);
+    if (!isWinner && isBoardFilled(updated)) {
+      setIsTie(true);
+    }
   }
 
   function resetGame() {
     setBoard(initialBoard);
     setIsX(false);
-    setIsTie(false)
+    setIsTie(false);
   }
 
   let message = "";
-  if(winner){
-    message = `${!isX ? "X" : "O"} won the Game`
+  if (winner) {
+    message = `${!isX ? "X" : "O"} won the Game`;
   } else {
-    message = `Match tied`
-  } 
+    message = `Match tied`;
+  }
 
   return (
-    <Fragment>
-      {(!winner && !isTie) && (
+    <div className="gameWrapper">
+      <h1>Tic Tac Toe Game</h1>
+      <p>
+        Play a classic game of Tic Tac Toe (also known as Noughts and Crosses)
+        online for free. Challenge yourself or compete with a friend!
+      </p>
+      {!winner && !isTie && (
         <div className="ttt-container">
           <header className="ttt-header">
-            <button className="ttt-turn">{next} TURN</button>
-            <button className="ttt-reset" onClick={resetGame}>
+            <h1 className="ttt-turn">{next} TURN</h1>
+            <button
+              className="ttt-reset"
+              type="button"
+              aria-label="reset"
+              onClick={resetGame}
+            >
               ⟲
             </button>
           </header>
@@ -78,15 +89,18 @@ export default function TicTacToe() {
                   cell === "O" ? "cell-o" : cell === "X" ? "cell-x" : ""
                 }`}
                 onClick={() => handleClick(idx)}
+                type="button"
+                aria-label={`Cell ${idx + 1}, ${cell ? cell : "empty"}`}
+                aria-pressed={cell ? "true" : "false"}
               >
                 {cell}
               </button>
             ))}
           </main>
         </div>
-      ) }
-      
-      {(winner || isTie) &&  (
+      )}
+
+      {(winner || isTie) && (
         <div className="ttt-modal">
           <div className="ttt-modal-content">
             <h2
@@ -102,6 +116,6 @@ export default function TicTacToe() {
           </div>
         </div>
       )}
-    </Fragment>
+    </div>
   );
 }

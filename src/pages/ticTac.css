@@ -1,7 +1,6 @@
 .ttt-container {
   background: #1a242e;
-  width: 340px;
-  margin: 40px auto;
+  max-width: 340px;
   border-radius: 15px;
   box-shadow: 0 8px 24px #0003;
   padding: 24px;
@@ -145,4 +144,13 @@
 
 .ttt-next-round:hover {
   background: #32b6a9;
+}
+
+.gameWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
 }
