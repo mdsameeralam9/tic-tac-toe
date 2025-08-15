@@ -53,14 +53,12 @@ export default function TicTacToe() {
     setIsTie(false)
   }
 
-
-
   let message = "";
   if(winner){
     message = `${!isX ? "X" : "O"} won the Game`
   } else {
     message = `Match tied`
-  }
+  } 
 
   return (
     <Fragment>
