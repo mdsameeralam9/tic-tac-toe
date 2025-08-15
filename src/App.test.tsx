@@ -4,7 +4,7 @@ import App from "./App";
 describe("App Component", () => {
   it("renders TicTacToe component", () => {
     render(<App />);
-    expect(screen.getByText(/O TURN/i)).toBeInTheDocument();
+    expect(screen.getByText(/O TURN/i)).toBeTruthy();
   });
 
   it("matches snapshot", () => {

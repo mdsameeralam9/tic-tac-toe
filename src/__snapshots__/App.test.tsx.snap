@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`App Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="gameWrapper"
+  >
+    <h1>
+      Tic Tac Toe Game
+    </h1>
+    <p>
+      Play a classic game of Tic Tac Toe (also known as Noughts and Crosses) online for free. Challenge yourself or compete with a friend!
+    </p>
+    <div
+      class="ttt-container"
+    >
+      <header
+        class="ttt-header"
+      >
+        <h1
+          class="ttt-turn"
+        >
+          O TURN
+        </h1>
+        <button
+          aria-label="reset"
+          class="ttt-reset"
+          type="button"
+        >
+          ⟲
+        </button>
+      </header>
+      <main
+        class="ttt-board"
+      >
+        <button
+          aria-label="Cell 1, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 2, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 3, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 4, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 5, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 6, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 7, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 8, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+        <button
+          aria-label="Cell 9, empty"
+          aria-pressed="false"
+          class="ttt-cell "
+          type="button"
+        />
+      </main>
+    </div>
+  </div>
+</DocumentFragment>
+`;

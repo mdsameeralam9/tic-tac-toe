@@ -1,4 +1,4 @@
-import TicTacToe from './pages/TicTac'
+import TicTacToe from './pages/TicTac/TicTac'
 
 function App() {
   return (
